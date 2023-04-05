@@ -21,3 +21,6 @@ console.log(2 + 2);
 
 //returns true when both divisions are equal to 5
 console.log(25 / 5 === 50 / 10);
+
+// oh no it's a number
+console.log(typeof 4.2);
