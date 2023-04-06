@@ -1,4 +1,4 @@
-//oddNumbers function
+//oddNumbers function - Task 1
 function oddNumbers(numberStart, numberEnd) {
   let outputString;
   for (numberStart; numberStart < numberEnd + 1; numberStart++) {
@@ -10,10 +10,13 @@ function oddNumbers(numberStart, numberEnd) {
       }
     }
   }
-  return console.log(outputString);
+  return outputString;
 }
 
-oddNumbers(-5, 25);
+console.log("Task One");
+
+//negative test output
+console.log(oddNumbers(-5, 25));
 
 console.log(oddNumbers(0, 4));
 // result should be: 1,3
@@ -23,3 +26,31 @@ console.log(oddNumbers(10, 33));
 
 console.log(oddNumbers(9, 12));
 // result should be: 9,11
+
+//charCount function - Task 2
+function charCount(word, char) {
+  let count = 0;
+  if (char.length > 1) {
+    return "More than one char!";
+  }
+  for (index = 0; index < word.length; index++) {
+    if (word[index] === char) {
+      count++;
+    }
+  }
+  return count;
+}
+
+console.log("Task 2");
+
+console.log(charCount("KkKkKk", "ko"));
+// result should be: 2
+
+console.log(charCount("hello", "l"));
+// result should be: 2
+
+console.log(charCount("mama", "m"));
+// result should be: 2
+
+console.log(charCount("Resümee", "e"));
+// result should be: 3
