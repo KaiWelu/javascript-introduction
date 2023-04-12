@@ -22,6 +22,19 @@ console.log(removeItem(fruits, 3));
 console.log(fruits);
 // result should be still: ["Watermelon", "Banana", "Cherry", "Kiwi", "Pineapple", "Apple"]
 
+//Bonus: how to copy an array with a loop
+function loopRemoveItem(array, position) {
+  newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    newArray.push(array[i]);
+  }
+  newArray.splice(position - 1, 1);
+  return newArray;
+}
+console.log("Bonus Output:");
+console.log(loopRemoveItem(animals, 1));
+console.log(animals);
+
 //Task 2 sumOfCharacters function
 
 function sumOfCharacters(array) {
