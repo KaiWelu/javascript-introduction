@@ -9,31 +9,13 @@ function countSheeps(arrayOfSheep) {
   return count;
 }
 
-var array1 = [
-  true,
-  true,
-  true,
-  false,
-  true,
-  true,
-  true,
-  true,
-  true,
-  false,
-  true,
-  false,
-  true,
-  false,
-  false,
-  true,
-  true,
-  true,
-  true,
-  true,
-  false,
-  false,
-  true,
-  true,
-];
-
-console.log(countSheeps(array1));
+// Sum of Positive - https://www.codewars.com/kata/5715eaedb436cf5606000381/train/javascript
+function positiveSum(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 0) {
+      sum += arr[i];
+    }
+  }
+  return sum;
+}
