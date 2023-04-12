@@ -46,3 +46,16 @@ function solution(str) {
 }
 
 // Even numbers in array - https://www.codewars.com/kata/5168bb5dfe9a00b126000018/solutions/javascript
+function evenNumbers(array, number) {
+  let outputArray = [];
+  for (let i = array.length; i >= 0; i--) {
+    if (outputArray.length < number) {
+      if (array[i] % 2 === 0) {
+        outputArray.unshift(array[i]);
+      }
+    }
+  }
+  return outputArray;
+}
+
+console.log(evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
