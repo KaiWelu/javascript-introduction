@@ -37,3 +37,12 @@ var number = function (busStops) {
   }
   return people;
 };
+
+// Reversed Strings - https://www.codewars.com/kata/5168bb5dfe9a00b126000018/train/javascript
+function solution(str) {
+  let array1 = str.split("");
+  array1.reverse();
+  return array1.join("");
+}
+
+// Even numbers in array - https://www.codewars.com/kata/5168bb5dfe9a00b126000018/solutions/javascript
