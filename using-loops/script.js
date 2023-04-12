@@ -34,7 +34,7 @@ function charCount(word, char) {
     return "More than one char!";
   }
   for (index = 0; index < word.length; index++) {
-    if (word[index] === char) {
+    if (word[index].toLowerCase() === char.toLowerCase()) {
       count++;
     }
   }
@@ -43,7 +43,7 @@ function charCount(word, char) {
 
 console.log("Task 2");
 
-console.log(charCount("KkKkKk", "ko"));
+console.log(charCount("KkKkKk", "k"));
 // result should be: 2
 
 console.log(charCount("hello", "l"));
