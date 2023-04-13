@@ -73,3 +73,30 @@ function getMiddle(s) {
   let output = array.join("");
   return output;
 }
+
+// Isograms - https://www.codewars.com/kata/54ba84be607a92aa900000f1/train/javascript
+function isIsogram(str) {
+  str = str.toLowerCase();
+  let array = str.split("");
+  if (array.length <= 0) {
+    return true;
+  }
+  let endpoint = array.length;
+  for (let i = 0; i < endpoint; i++) {
+    let temp = array[0];
+    console.log(temp);
+    array.shift();
+    if (array.includes(temp) === true) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(isIsogram("isIsogram"));
+console.log(isIsogram("aba"));
+console.log(isIsogram("Dermatoglyphics"));
+console.log(isIsogram(""));
+console.log(isIsogram("isogram"));
+console.log(isIsogram("moOse"));
+console.log(isIsogram("abcdefghijklmn"));
