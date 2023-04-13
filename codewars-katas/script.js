@@ -59,3 +59,17 @@ function evenNumbers(array, number) {
 }
 
 console.log(evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
+
+// Get the middle character - https://www.codewars.com/kata/56747fd5cb988479af000028/train/javascript
+function getMiddle(s) {
+  let array = s.split("");
+  if (array.length % 2 === 0) {
+    let start = array.length / 2 - 1;
+    array = array.slice(start, start + 2);
+  } else {
+    let start = Math.floor(array.length / 2);
+    array = array.slice(start, start + 1);
+  }
+  let output = array.join("");
+  return output;
+}
