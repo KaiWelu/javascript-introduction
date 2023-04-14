@@ -93,10 +93,19 @@ function isIsogram(str) {
   return true;
 }
 
-console.log(isIsogram("isIsogram"));
-console.log(isIsogram("aba"));
-console.log(isIsogram("Dermatoglyphics"));
-console.log(isIsogram(""));
-console.log(isIsogram("isogram"));
-console.log(isIsogram("moOse"));
-console.log(isIsogram("abcdefghijklmn"));
+// Vowel Count - https://www.codewars.com/kata/54ff3102c1bad923760001f3/train/javascript
+function getCount(str) {
+  let array = str.split("");
+  let count = 0;
+  let vowelArray = ["a", "e", "i", "o", "u"];
+
+  for (let i = 0; i < array.length; i++) {
+    for (let j = 0; j < vowelArray.length; j++) {
+      if (array[i] === vowelArray[j]) {
+        count++;
+      }
+    }
+  }
+
+  return count;
+}
