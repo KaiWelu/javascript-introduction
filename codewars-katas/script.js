@@ -114,3 +114,12 @@ function getCount(str) {
 function repeatStr(n, s) {
   return s.repeat(n);
 }
+
+// Descending Order - https://www.codewars.com/kata/5467e4d82edf8bbf40000155/train/javascript
+function descendingOrder(n) {
+  let castedString = n.toString();
+  let workingArray = castedString.split("");
+  let sortedArray = workingArray.sort((a, b) => b - a);
+  let output = sortedArray.join("");
+  return Number(output);
+}
