@@ -123,3 +123,21 @@ function descendingOrder(n) {
   let output = sortedArray.join("");
   return Number(output);
 }
+
+// Mumbling - https://www.codewars.com/kata/5667e8f4e3f572a8f2000039/train/javascript
+function accum(s) {
+  let workingArray = s.split("");
+  //repeating the chars
+  let outputArray = [];
+  for (let i = 0; i < workingArray.length; i++) {
+    outputArray.push(workingArray[i].repeat(i + 1));
+  }
+  //sanitizing lower and upper case
+  for (let i = 0; i < outputArray.length; i++) {
+    outputArray[i] =
+      outputArray[i][0].toUpperCase() +
+      outputArray[i].substring(1, outputArray[i].length).toLowerCase();
+  }
+  let output = outputArray.join("-");
+  return output;
+}
