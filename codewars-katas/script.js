@@ -153,3 +153,11 @@ function maskify(cc) {
   });
   return workingArray.join("");
 }
+
+// Remove First and Last Letter - https://www.codewars.com/kata/56bc28ad5bdaeb48760009b0/train/javascript
+function removeChar(str) {
+  let workingArray = str.split("");
+  workingArray.pop();
+  workingArray.shift();
+  return workingArray.join("");
+}
