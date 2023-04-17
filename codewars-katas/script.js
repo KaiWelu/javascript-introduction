@@ -141,3 +141,15 @@ function accum(s) {
   let output = outputArray.join("-");
   return output;
 }
+
+// Credit Card Mask - https://www.codewars.com/kata/5412509bd436bd33920011bc/train/javascript
+function maskify(cc) {
+  let workingArray = cc.split("");
+  workingArray.forEach((elem, index) => {
+    if (index < workingArray.length - 4) {
+      console.log(elem);
+      workingArray[index] = "#";
+    }
+  });
+  return workingArray.join("");
+}
