@@ -161,3 +161,12 @@ function removeChar(str) {
   workingArray.shift();
   return workingArray.join("");
 }
+
+// Highest and Lowest - https://www.codewars.com/kata/554b4ac871d6813a03000035/train/javascript
+function highAndLow(numbers) {
+  let workingArray = numbers.split(" ");
+  workingArray.sort((a, b) => a - b);
+  const high = workingArray[workingArray.length - 1];
+  const low = workingArray[0];
+  return high + " " + low;
+}
