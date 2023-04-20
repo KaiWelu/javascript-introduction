@@ -122,17 +122,13 @@ function descendingOrder(n) {
   return Number(output);
 }
 
-console.log(descendingOrder("0320"));
-
 // Mumbling - https://www.codewars.com/kata/5667e8f4e3f572a8f2000039/train/javascript
 function accum(s) {
   let workingArray = s.split("");
-  //repeating the chars
   let outputArray = [];
   for (let i = 0; i < workingArray.length; i++) {
     outputArray.push(workingArray[i].repeat(i + 1));
   }
-  //sanitizing lower and upper case
   for (let i = 0; i < outputArray.length; i++) {
     outputArray[i] =
       outputArray[i][0].toUpperCase() +
@@ -141,13 +137,13 @@ function accum(s) {
   let output = outputArray.join("-");
   return output;
 }
+console.log(accum("abcd"));
 
 // Credit Card Mask - https://www.codewars.com/kata/5412509bd436bd33920011bc/train/javascript
 function maskify(cc) {
   let workingArray = cc.split("");
   workingArray.forEach((elem, index) => {
     if (index < workingArray.length - 4) {
-      console.log(elem);
       workingArray[index] = "#";
     }
   });
@@ -240,4 +236,30 @@ function twoSum(numbers, target) {
       }
     }
   }
+}
+
+// Count characters in your string - https://www.codewars.com/kata/52efefcbcdf57161d4000091/train/javascript
+function count(string) {
+  const outputObject = {};
+  // return empty object if string is empty
+  if (string.length === 0) {
+    return outputObject;
+  }
+  //create a set of unique chars in the string
+  const workingSet = new Set();
+  for (let i = 0; i < string.length; i++) {
+    workingSet.add(string.charAt(i));
+  }
+  console.log(workingSet);
+  //count the chars in the string and add them to the output object
+  workingSet.forEach((element) => {
+    let count = 0;
+    for (let i = 0; i < string.length; i++) {
+      if (element === string[i]) {
+        count++;
+      }
+    }
+    outputObject[element] = count;
+  });
+  return outputObject;
 }
