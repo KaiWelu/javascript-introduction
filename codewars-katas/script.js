@@ -20,7 +20,7 @@ function positiveSum(arr) {
   return sum;
 }
 
-// Return Positive - https://www.codewars.com/kata/55685cd7ad70877c23000102/train/javascript
+// Return Negative - https://www.codewars.com/kata/55685cd7ad70877c23000102/train/javascript
 function makeNegative(num) {
   if (num > 0) {
     num *= -1;
@@ -57,8 +57,6 @@ function evenNumbers(array, number) {
   }
   return outputArray;
 }
-
-console.log(evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
 
 // Get the middle character - https://www.codewars.com/kata/56747fd5cb988479af000028/train/javascript
 function getMiddle(s) {
@@ -119,10 +117,12 @@ function repeatStr(n, s) {
 function descendingOrder(n) {
   let castedString = n.toString();
   let workingArray = castedString.split("");
-  let sortedArray = workingArray.sort((a, b) => b - a);
+  let sortedArray = workingArray.sort((a, b) => b - a); //only works if the input is only numbers
   let output = sortedArray.join("");
   return Number(output);
 }
+
+console.log(descendingOrder("0320"));
 
 // Mumbling - https://www.codewars.com/kata/5667e8f4e3f572a8f2000039/train/javascript
 function accum(s) {
@@ -170,3 +170,35 @@ function highAndLow(numbers) {
   const low = workingArray[0];
   return high + " " + low;
 }
+
+// Who likes this? - https://www.codewars.com/kata/5266876b8f4bf2da9b000362/train/javascript
+function likes(names) {
+  const workingArray = names;
+  if (workingArray.length === 0) {
+    return "no one likes this";
+  } else if (workingArray.length === 1) {
+    return workingArray[0] + " likes this";
+  } else if (workingArray.length === 2) {
+    return workingArray[0] + " and " + workingArray[1] + " like this";
+  } else if (workingArray.length === 3) {
+    return (
+      workingArray[0] +
+      ", " +
+      workingArray[1] +
+      " and " +
+      workingArray[2] +
+      " like this"
+    );
+  } else {
+    return (
+      workingArray[0] +
+      ", " +
+      workingArray[1] +
+      " and " +
+      (workingArray.length - 2) +
+      " others like this"
+    );
+  }
+}
+
+console.log(likes(["Alex", "Jacob", "Mark", "Max"]));
