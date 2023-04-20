@@ -228,3 +228,16 @@ function humanReadable(seconds) {
 }
 
 console.log(humanReadable(500));
+
+//Two Sum - https://www.codewars.com/kata/52c31f8e6605bcc646000082/train/javascript
+function twoSum(numbers, target) {
+  const numbersArray = numbers;
+  const targetNumber = target;
+  for (let i = 0; i < numbersArray.length; i++) {
+    for (j = i + 1; j < numbersArray.length; j++) {
+      if (numbersArray[i] + numbersArray[j] === targetNumber) {
+        return [i, j];
+      }
+    }
+  }
+}
