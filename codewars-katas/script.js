@@ -201,4 +201,30 @@ function likes(names) {
   }
 }
 
-console.log(likes(["Alex", "Jacob", "Mark", "Max"]));
+// Human Readable Time - https://www.codewars.com/kata/52685f7382004e774f0001f7/train/javascript
+function humanReadable(seconds) {
+  const input = seconds;
+  //this calculates the hours
+  const hourRemainder = input % 3600;
+  const hours = (input - hourRemainder) / 3600;
+  //this calculates the minutes based on the remainder of the hours
+  const minuteRemainder = hourRemainder % 60;
+  const minutes = (hourRemainder - minuteRemainder) / 60;
+  //seconds are just the las remainder
+  const secondsOutput = minuteRemainder;
+  //sanitizing the output to strings and add leading zeros
+  const outputArray = [
+    hours.toString(),
+    minutes.toString(),
+    secondsOutput.toString(),
+  ];
+  for (let i = 0; i < outputArray.length; i++) {
+    if (outputArray[i].length < 2) {
+      outputArray[i] = "0" + outputArray[i];
+    }
+  }
+
+  return outputArray[0] + ":" + outputArray[1] + ":" + outputArray[2];
+}
+
+console.log(humanReadable(500));
