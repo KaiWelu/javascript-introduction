@@ -137,7 +137,6 @@ function accum(s) {
   let output = outputArray.join("-");
   return output;
 }
-console.log(accum("abcd"));
 
 // Credit Card Mask - https://www.codewars.com/kata/5412509bd436bd33920011bc/train/javascript
 function maskify(cc) {
@@ -223,8 +222,6 @@ function humanReadable(seconds) {
   return outputArray[0] + ":" + outputArray[1] + ":" + outputArray[2];
 }
 
-console.log(humanReadable(500));
-
 //Two Sum - https://www.codewars.com/kata/52c31f8e6605bcc646000082/train/javascript
 function twoSum(numbers, target) {
   const numbersArray = numbers;
@@ -250,7 +247,7 @@ function count(string) {
   for (let i = 0; i < string.length; i++) {
     workingSet.add(string.charAt(i));
   }
-  console.log(workingSet);
+
   //count the chars in the string and add them to the output object
   workingSet.forEach((element) => {
     let count = 0;
@@ -263,3 +260,82 @@ function count(string) {
   });
   return outputObject;
 }
+
+// PaginationHelper - https://www.codewars.com/kata/515bb423de843ea99400000a/train/javascript
+class PaginationHelper {
+  constructor(collection, itemsPerPage) {
+    this.collection = collection;
+    this.itemsPerPage = itemsPerPage;
+  }
+  itemCount() {
+    // returns the number of items within the entire collection
+    return this.collection.length;
+  }
+  pageCount() {
+    return Math.ceil(this.collection.length / this.itemsPerPage);
+  }
+  pageItemCount(pageIndex) {
+    // returns the number of items on the current page. page_index is zero based.
+    // this method should return -1 for pageIndex values that are out of range
+  }
+  pageIndex(itemIndex) {
+    // determines what page an item is on. Zero based indexes
+    // this method should return -1 for itemIndex values that are out of range
+  }
+}
+
+const pageObject = new PaginationHelper(["a", "b", "c", "d", "e", "f"], 4);
+
+// Zip String Kata
+function zipStrings(strA, strB) {
+  const workingArray = [];
+  let strArrayA = strA.split("");
+  let strArrayB = strB.split("");
+  for (let i = 0; i < strArrayA.length + strArrayB.length; i++) {
+    workingArray[i] = null;
+  }
+  console.log(workingArray);
+  for (let i = 0; i < workingArray.length; i = i + 2) {
+    workingArray[i] = strArrayA[i];
+  }
+  for (let i = 0; i < workingArray.length; i++) {
+    if (workingArray[i] === null) {
+      workingArray[i] = strArrayB.shift();
+    }
+  }
+  console.log(workingArray);
+  return workingArray.join("");
+}
+
+// Counting Duplicates - https://www.codewars.com/kata/54bf1c2cd5b56cc47f0007a1/train/javascript
+function duplicateCount(text) {
+  text = text.toLowerCase().split("");
+  const duplicateCount = [];
+  const duplicateSet = new Set();
+  let output = 0;
+
+  text.forEach((char) => {
+    duplicateSet.add(char);
+  });
+
+  duplicateSet.forEach((char) => {
+    duplicateCount.push([char, 0]);
+  });
+
+  for (let i = 0; i < text.length; i++) {
+    for (let j = 0; j < duplicateCount.length; j++) {
+      if (text[i] === duplicateCount[j][0]) {
+        duplicateCount[j][1]++;
+      }
+    }
+  }
+
+  for (let i = 0; i < duplicateCount.length; i++) {
+    if (duplicateCount[i][1] > 1) {
+      output++;
+    }
+  }
+  return output;
+}
+
+duplicateCount("Yolo");
