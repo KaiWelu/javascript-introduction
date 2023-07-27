@@ -350,4 +350,27 @@ function solution(number) {
   return sum;
 }
 
-solution(10);
+// Stop gninnipS My sdroW! - https://www.codewars.com/kata/5264d2b162488dc400000001
+
+function spinWords(string) {
+  string = string.split(" ");
+  let output = [];
+
+  function reverse(word) {
+    let reversedWord = "";
+    for (let i = word.length - 1; i >= 0; i--) {
+      reversedWord += word[i];
+    }
+    return reversedWord;
+  }
+
+  for (i = 0; i < string.length; i++) {
+    if (string[i].length > 4) {
+      output.push(reverse(string[i]));
+    } else {
+      output.push(string[i]);
+    }
+  }
+
+  return output.join(" ");
+}
